@@ -15,6 +15,10 @@ const io = socketIO(server,{
 io.on('connection', (socket) => {
   console.log('A user connected');
 socket.join("room")
+socket.to("room").emit('connected', {
+  id: socket.id,
+  msg: data.msg
+});
   // Listen for chat messages
   socket.on('sendMsg', (data) => {
     socket.to("room").emit('message', {

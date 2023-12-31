@@ -1,4 +1,4 @@
-const socket = io()
+const socket = io("https://hospitable-plaid-count.glitch.me/")
 
 function addMsg(t=false,user, msg) {
   let div = document.createElement("div")
