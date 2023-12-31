@@ -80,7 +80,7 @@ const countdownInterval = setInterval(() => {
 
   }
 
-  if (minutes < 1 && hours == 0 && seconds == 25) {
+  if (minutes < 1 && hours == 0 && seconds == 26) {
     playMusic()
   }
 
