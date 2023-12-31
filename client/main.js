@@ -3,11 +3,11 @@ const socket = io("https://hospitable-plaid-count.glitch.me/")
 function addMsg(t=false,user, msg) {
   let div = document.createElement("div")
   div.className = "message"
-  div.textContent = `[${t ? `User ${user}`:"You"}]:${msg}`
+  div.textContent = `[${t ? `Others`:"You"}]:${msg}`
   document.getElementById("messages").appendChild(div)
 }
 
-socket.on("chat message", function(data) {
+socket.on("message", function(data) {
   addMsg(true,data.id, data.msg)
 })
 
@@ -15,7 +15,7 @@ document.getElementById("form_msg").addEventListener("submit",function (e) {
   e.preventDefault()
   
   let msg = document.getElementById("message_input").value 
-  socket.emit("send message",{
+  socket.emit("sendMsg",{
     msg:msg
   })
   
