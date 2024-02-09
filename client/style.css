@@ -4,88 +4,66 @@ body {
   /* Added for background color transition */
 }
 
-#countdown {
-  display: flex;
-  justify-content: space-around;
-  width: 300px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
 }
 
-.countdown-box {
-  transition:0.3s;
+body {
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+
+  align-items: center;
+  height: 100vh;
+}
+
+.countdown-container {
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Màu nền trắng */
+  padding: 16px;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.countdown-value {
-  transition: 0.3s;
-  font-size: 2rem;
+h1 {
+  color: white;
+  /* Màu đỏ Tết */
 }
 
-.effect {
-  
-  
-  animation: explode 1s ease-out infinite;
-}
+#countdown {
+  font-size: 23px;
 
-.firework-1 {
-  background-color: #ffcc00;
-}
-
-.firework-2 {
-  background-color: #ff6699;
-}
-
-.firework-3 {
-  background-color: #66ccff;
-}
-
-.firework-4 {
-  background-color: #99ff99;
-}
-
-.firework-5 {
-  background-color: #ff9933;
-}
-
-.countdown-alert {
-  /* Added style for the last minute alert */
-  font-size: 1.5rem;
   color: red;
+  /* Màu chữ đen */
+  transition: 0.5s;
+  animation-name: countdown;
+  animation-duration: 0.5s;
+
 }
 
-@keyframes explode {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(5);
-    opacity: 0;
-  }
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: none;
 }
 
-@keyframes ray {
-  0% {
-    width: 0;
-    opacity: 0;
+@keyframes countdown {
+  from {
+    transform: scale(0);
   }
 
-  50% {
-    width: 8px;
-    opacity: 1;
-  }
-
-  100% {
-    width: 0;
-    opacity: 0;
+  to {
+    transform: scaleX(1);
   }
 }
-
-
 .container {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
